@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: white;
+}
+
+.install-instructions {
+  background-color: #000;
+  color: white;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.instructions-text {
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.instructions-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.instructions-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.instructions-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.download-header {
+  background-color: #000;
+  padding: 1.5rem 2rem;
+}
+
+.download-header .logo {
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.download-card-section {
+  background-color: #000;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+.interest-card {
+  background: linear-gradient(135deg, #36383b, #121212);
+  border: 3px solid #56585d;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  max-width: 500px;
+  width: 100%;
+}
+
+.download-buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.download-buttons button {
+  padding: 0.75rem 1.5rem;
+  background-color: #36383b;
+  color: #FFF;
+  font-weight: 600;
+  border: 3px solid #56585d;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.3s;
+}
+
+.download-buttons button:hover {
+  background-color: #e5b800;
+}
+
+.site-footer {
+  background-color: #000;
+  color: #888;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
