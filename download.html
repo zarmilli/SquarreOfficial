@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download Squarre</title>
+  <meta name="theme-color" content="#000000" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="download.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="download-header">
+    <a href="index.html" class="logo">Squarre</a>
+  </header>
+
+  <section class="install-instructions">
+  <div class="instructions-text">
+    <h2>Installing from browser</h2>
+    <p>
+      Since the app is being installed from your browser and not the Play Store, Google Play Protect may prompt you to scan the APK.  
+      Simply tap <strong>“More details”</strong> then choose <strong>“Install anyway”</strong> to continue.
+    </p>
+  </div>
+  <div class="instructions-image">
+    <img src="instructions.jpg" alt="Install without scanning instructions" />
+  </div>
+</section>
+
+  <!-- Download Card -->
+  <section class="download-card-section">
+    <div class="interest-card">
+      <p>
+        Squarre is currently only available as a mobile app. However, we've built it with multiplatform support so you can access the web version on iOS or desktop.
+      </p>
+      <div class="download-buttons">
+        <button id="apkDownload">Download App</button>
+        <button onclick="window.location.href='https://zarmilli.github.io/Squarre'">Use iOS Version</button>
+        <button onclick="window.location.href='https://zarmilli.github.io/Squarre'">Use on Desktop</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+  <p>&copy; 2025 Squarre. All rights reserved.</p>
+</footer>
+
+  <script>
+    document.getElementById('apkDownload').addEventListener('click', () => {
+      window.location.href = 'Squarre.apk';
+    });
+  </script>
+
+</body>
+</html>

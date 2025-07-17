@@ -1,0 +1,369 @@
+:root {
+/*  change this for scaling  */
+  --m: 2rem;
+  
+  --red: #FF6565;
+  --pink: #FF64F9;
+  --purple: #6B5FFF;
+  --blue: #4D8AFF;
+  --green: #5BFF89;
+  --yellow: #FFEE55;
+  --orange: #FF6D1B;
+  
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: white;
+}
+
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hero img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+/* button */
+button {
+  border: calc(0.08 * var(--m)) solid transparent;
+  position: relative;
+  color: #F3F3F3;
+  font-size: var(--m);
+  border-radius: calc(0.7 * var(--m));
+  padding: calc(0.5 * var(--m)) calc(1 * var(--m));
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  
+  background:linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),  linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  background-origin: border-box;
+  background-clip: padding-box, border-box, border-box;
+  background-size: 200%;
+  animation: animate 2s infinite linear;
+}
+
+button::before {
+  content: '';
+  background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  height: 30%;
+  width: 90%;
+  position: absolute;
+  bottom: -20%;
+  z-index: -5;
+  background-size: 200%;
+  animation: animate 2s infinite linear;
+  filter: blur(calc(0.8 * var(--m)));
+}
+
+button:hover, button:hover::before {
+  animation: animate 0.5s infinite linear;
+}
+
+@keyframes animate {
+  0% {background-position: 0}
+  100% {background-position: 200%}
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --m: 1.7rem;
+  }
+}
+
+.about {
+  padding: 4rem 2rem;
+  background-color: #000;
+  color: white;
+  text-align: center;
+  align-items: center;
+    justify-items: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about h1 {
+    font-size: 1.1rem;
+}
+
+.about h1 span {
+    position: relative;
+    display: inline-block;
+    color: gold;
+    height: 1.25rem;
+    vertical-align: center;
+    overflow: hidden;
+}
+
+.about h1 span span {
+    display: block;
+    animation: animateWords 8s infinite ease;
+}
+
+@keyframes animateWords {
+    0% {transform: translateY(0%);}
+    25% {transform: translateY(-100%);}
+    50% {transform: translateY(-200%);}
+    75% {transform: translateY(-300%);}
+    100% {transform: translateY(-400%);}
+}
+.about p {
+  font-size: 1rem;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.features {
+  padding: 1rem 1rem;
+  background-color: #000;
+  color: white;
+}
+
+.features-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.feature-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  flex-wrap: nowrap;
+}
+
+.feature-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-img {
+  flex: 0 0 50%;
+}
+
+.feature-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.feature-text {
+  flex: 0 0 50%;
+  text-align: left;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  line-height: 1.5;
+}
+
+.feature-text h3 {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.investments {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.investments-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.investments-text {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  margin-left: 1rem;
+  max-width: 400px;
+  color: white;
+  text-align: right;
+  z-index: 1;
+}
+
+.investments-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.investments-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.interest-section {
+  background-color: #000;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.interest-section {
+  background-color: #000;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.interest-card {
+  background: linear-gradient(135deg, #56585d, #000);
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+  border: 1px solid #56585d;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  max-width: 400px;
+  width: 100%;
+}
+.interest-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.interest-card .subtext {
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
+.interest-result .provider {
+  margin-bottom: 1.5rem;
+}
+
+.interest-result .provider h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.interest-result .provider .amount {
+  margin: 0.3rem 0 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.download-section {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.download-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.download-section p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.download-btn {
+  border: calc(0.08 * var(--m)) solid transparent;
+  position: relative;
+  color: #F3F3F3;
+  font-size: var(--m);
+  border-radius: calc(0.7 * var(--m));
+  padding: calc(0.5 * var(--m)) calc(1 * var(--m));
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  
+  background:linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),  linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  background-origin: border-box;
+  background-clip: padding-box, border-box, border-box;
+  background-size: 200%;
+  animation: animate 2s infinite linear;
+}
+
+.download-btn::before {
+  content: '';
+  background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  height: 30%;
+  width: 90%;
+  position: absolute;
+  bottom: -20%;
+  z-index: -5;
+  background-size: 200%;
+  animation: animate 2s infinite linear;
+  filter: blur(calc(0.8 * var(--m)));
+}
+
+.download-btn:hover, .download-btn:hover::before {
+  animation: animate 0.5s infinite linear;
+}
+
+@keyframes animate {
+  0% {background-position: 0}
+  100% {background-position: 200%}
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --m: 1.7rem;
+  }
+}
+
+.site-footer {
+  background-color: #000;
+  color: #888;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
