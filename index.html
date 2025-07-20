@@ -10,12 +10,20 @@
 </head>
 <body>
 
-  <section class="hero">
-    <img src="imgs/ad cards.png" alt="Hero Image" />
-    <h1>Bank like a pro</h1>
-    <p>Born to build wealth<br>Investing from smallholder farms to large-scale agribusinesses</p>
-    <button id="getStartedBtn">Get Started</button>
-  </section>
+  <section class="main">
+  <div class="lightBar"></div>
+  <canvas id="anim"></canvas>
+  <div class="hero-content">
+    <img src="imgs/logo.png" alt="Squarre Logo" class="hero-logo" />
+    <div class="hero-text">
+      <h1 class="hero-title">Squarre</h1>
+      <p class="hero-subtitle">Your powerful virtual bank.<br>An innovative way to integrate banking, agriculture, investing, and personal finance!</p>
+      <button class="cta-button" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">
+        Learn More
+      </button>
+    </div>
+  </div>
+</section>
 
   <section id="about" class="about">
   <div class="about-content">

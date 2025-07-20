@@ -1,100 +1,139 @@
-:root {
-/*  change this for scaling  */
-  --m: 2rem;
-  
-  --red: #FF6565;
-  --pink: #FF64F9;
-  --purple: #6B5FFF;
-  --blue: #4D8AFF;
-  --green: #5BFF89;
-  --yellow: #FFEE55;
-  --orange: #FF6D1B;
-  
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #000;
+  background-color: #121212;
   color: white;
 }
 
-.hero {
-  height: 80vh;
+.main {
+  width: 100%;
+  height: 100vh;
+  background-size: 100% 100%;
+  background-position: 0px 0px;
+  background-image: radial-gradient(
+    75% 75% at 50% 50%,
+    #171717 0%,
+    #000000 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main #anim {
+  position: absolute;
+  transform: translateY(25px);
+  width: 40%;
+  height: 300px;
+  mix-blend-mode: overlay;
+  color: white;
+}
+
+.lightBar {
+  width: 200%;
+  height: 500px;
+  left: 0;
+  --top: #000000;
+  --bottom: #171717;
+  --first: conic-gradient(from 90deg at 80% 50%, var(--top), var(--bottom));
+  --second: conic-gradient(from 270deg at 20% 50%, var(--bottom), var(--top));
+  mask-image: radial-gradient(100% 50% at center center, black, transparent);
+  background-image: var(--first), var(--second);
+  background-position-x: 1%, 99%;
+  background-position-y: 0%, 0%;
+  background-size: 50% 100%, 50% 100%;
+  opacity: 1;
+  transform: rotate(180deg) translateZ(0px) translateY(100px);
+  transform-origin: center center;
+  background-repeat: no-repeat;
+  /* animation: lightbarBoot var(--d) var(--animation) forwards; */
+}
+
+.hero-content {
+  text-align: center;
+  margin-top: 2rem;
+  animation: fadeIn 2.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-logo {
+  width: clamp(50px, 30vw, 50px);
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: #cccccc;
+  font-weight: 400;
+}
+
+.hero-text {
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1rem;
   text-align: center;
-  margin-bottom: 50px;
+  animation: fadeInText 2.5s ease forwards;
+  opacity: 0;
+  padding: 2rem;
 }
 
-.hero img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 8vw, 4rem);
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin: 0;
+  color: white;
 }
 
-.hero p {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  margin-bottom: 2rem;
+.hero-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: #999;
+  margin-top: 0.5rem;
 }
 
-/* button */
-button {
-  border: calc(0.08 * var(--m)) solid transparent;
-  position: relative;
-  color: #F3F3F3;
-  font-size: var(--m);
-  border-radius: calc(0.7 * var(--m));
-  padding: calc(0.5 * var(--m)) calc(1 * var(--m));
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  
-  background:linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),  linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
-  background-origin: border-box;
-  background-clip: padding-box, border-box, border-box;
-  background-size: 200%;
-  animation: animate 2s infinite linear;
-}
-
-button::before {
-  content: '';
-  background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
-  height: 30%;
-  width: 90%;
-  position: absolute;
-  bottom: -20%;
-  z-index: -5;
-  background-size: 200%;
-  animation: animate 2s infinite linear;
-  filter: blur(calc(0.8 * var(--m)));
-}
-
-button:hover, button:hover::before {
-  animation: animate 0.5s infinite linear;
-}
-
-@keyframes animate {
-  0% {background-position: 0}
-  100% {background-position: 200%}
-}
-
-@media screen and (max-width: 1000px) {
-  :root {
-    --m: 1.7rem;
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: fadeIn 2.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .about {
